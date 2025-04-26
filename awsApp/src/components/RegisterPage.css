@@ -1,0 +1,102 @@
+.register-container {
+  width: 400px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #f7f7f7;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.register-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #555;
+  font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"],
+.form-group input[type="date"],
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+.form-group input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+.form-group.terms {
+  display: flex;
+  align-items: center; /* 垂直居中對齊 */
+}
+
+.form-group.terms input[type="checkbox"] {
+  margin-right: 5px; /* 複選框和文字之間增加一點間距 */
+}
+
+.form-group.terms label {
+  margin-bottom: 0; /* 移除 label 預設的底部 margin */
+}
+
+.form-group.terms label a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.form-group.terms label a:hover {
+  text-decoration: underline;
+}
+
+.form-actions {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.form-actions button {
+  background-color: #007bff;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.form-actions button:hover {
+  background-color: #0056b3;
+}
+
+.form-actions button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.has-account {
+  text-align: center;
+  margin-top: 15px;
+  color: #777;
+}
+
+.has-account a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.has-account a:hover {
+  text-decoration: underline;
+}

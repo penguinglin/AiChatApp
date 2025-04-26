@@ -2,6 +2,8 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom"; // 導入 useNavigate
 import "../components/LoginPage.css"; // 導入 CSS 檔案
+import { Link } from "react-router-dom"; // 導入 Link
+import RegisterPage from "./pages/RegisterPage";
 
 function LoginPage() {
   const [username, setUsername] = useState("");
@@ -74,9 +76,9 @@ function LoginPage() {
           Login
         </button>
       </div>
-      {/* <div className="no-account">
-        New? <Link to="/register">Register here</Link>
-      </div> */}
+      <div className="no-account">
+        New? <Link to="/RegisterPage">Register here</Link>
+      </div>
     </div>
   );
 }

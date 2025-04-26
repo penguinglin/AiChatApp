@@ -4,7 +4,7 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 import LoginPage from "./pages/LoginPage";
-import SignInPage from "./pages/SignInPage";
+import RegisterPage from "./pages/RegisterPage";
 
 function App() {
   const [isVisibleStart, setIsVisibleStart] = useState(true);
@@ -61,7 +61,12 @@ function App() {
                 showLoginInterface ? "fade-in" : ""
               }`}
             >
-              <LoginPage />
+              <Routes>
+                <Route path="/login" element={<LoginPage />} />{" "}
+                {/* 將 LoginPage 放在 /login 路徑 */}
+                <Route path="/registerpage" element={<RegisterPage />} />{" "}
+                {/* 添加 RegisterPage 的路由 */}
+              </Routes>
             </div>
           )}
         </div>
