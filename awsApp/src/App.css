@@ -40,3 +40,25 @@
 .read-the-docs {
   color: #888;
 }
+
+/* 淡出效果的樣式 */
+.fade-out {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out; /* 0.5秒的淡出動畫 */
+}
+
+.fade-out.hidden {
+  opacity: 0;
+}
+
+.login-interface-container {
+  opacity: 0;
+  transform: translateY(20px); /* 初始位置在下方 */
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; /* 將 0.3s 改為 0.5s 或更長 */
+  margin-top: 20px; /* 與上方元素間距 */
+}
+
+.login-interface-container.fade-in {
+  opacity: 1;
+  transform: translateY(0); /* 浮現到正常位置 */
+}

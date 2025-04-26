@@ -47,9 +47,9 @@ awsApp/
 │   │   └── languageOptions.js
 │   ├── App.jsx             # 主 App 元件
 │   ├── App.css             # 主樣式
-│   ├── main.jsx            # 項目的進入點
-│   └── index.css           # 其他通用樣式
-├── index.html              # HTML 模板
+│   ├── Main.jsx            # 項目的進入點
+│   └── Index.css           # 其他通用樣式
+├── Index.html              # HTML 模板
 ├── package.json            # 專案依賴和設置
 └── package-lock.json       # 精確版本控制
 ```
