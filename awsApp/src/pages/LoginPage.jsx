@@ -26,20 +26,24 @@ function LoginPage() {
     setRememberMe(event.target.checked);
   };
 
-  const handleLogin = async () => {  // ⭐
+  const handleLogin = async () => {
+    // ⭐
     if (isLoginEnabled) {
       try {
         console.log("Logging in with:", { username, password, rememberMe });
-        const userCredential = await signInWithEmailAndPassword(auth, username, password); // ⭐記得 await
+        const userCredential = await signInWithEmailAndPassword(
+          auth,
+          username,
+          password
+        ); // ⭐記得 await
         console.log("登入成功", userCredential.user);
-        navigate("/chat"); // ⭐成功才導頁
+        navigate("/chatapp"); // ⭐成功才導頁
       } catch (error) {
         console.error("登入失敗", error.message);
         alert("登入失敗：" + error.message); // ⭐失敗顯示錯誤
       }
     }
   };
-  
 
   useEffect(() => {
     setIsLoginEnabled(username.trim() !== "" && password.trim() !== "");

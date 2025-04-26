@@ -44,7 +44,8 @@ function RegisterPage() {
     setAgreeTerms(event.target.checked);
   };
 
-  const handleRegister = async () => {  //⭐加 async
+  const handleRegister = async () => {
+    //⭐加 async
     if (isRegisterEnabled) {
       try {
         console.log("Registering with:", {
@@ -55,28 +56,31 @@ function RegisterPage() {
           language,
           agreeTerms,
         });
-  
+
         //⭐ 第一步：用帳號密碼在Firebase註冊
-        const userCredential = await createUserWithEmailAndPassword(auth, username, password);
+        const userCredential = await createUserWithEmailAndPassword(
+          auth,
+          username,
+          password
+        );
         const user = userCredential.user;
-  
+
         //⭐ 第二步：更新使用者顯示名稱（可選）
         await updateProfile(user, {
           displayName: displayName,
         });
-  
+
         console.log("註冊成功", user);
-  
+
         //⭐ 第三步：跳轉到登入頁
-        navigate("/login");
-        
+        // navigate("/login");
+        navigate("/chatapp"); //⭐成功才導頁
       } catch (error) {
         console.error("註冊失敗", error.message);
         alert("註冊失敗：" + error.message); //⭐也可以做成紅字顯示
       }
     }
   };
-  
 
   useEffect(() => {
     const isUsernameValid = username.trim() !== "";
@@ -168,15 +172,14 @@ function RegisterPage() {
         </label>
       </div>
       <div className="form-actions">
-      <button
-        onClick={() => {
-          handleRegister();   // ⭐呼叫註冊，不是handleSaveProfile
-          alert("Settings saved!");
-        }}        
-      >
-        Save
-      </button>
-
+        <button
+          onClick={() => {
+            handleRegister(); // ⭐呼叫註冊，不是handleSaveProfile
+            alert("Settings saved!");
+          }}
+        >
+          Save
+        </button>
       </div>
       <div className="has-account">
         Already have an account? <Link to="/login">Login here</Link>

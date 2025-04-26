@@ -66,7 +66,7 @@ function App() {
               }`}
             >
               <Routes>
-                <Route path="/" element={<LoginPage/>}/>{" "}
+                <Route path="/" element={<LoginPage />} />{" "}
                 <Route path="/login" element={<LoginPage />} />{" "}
                 {/* 將 LoginPage 放在 /login 路徑 */}
                 <Route path="/registerpage" element={<RegisterPage />} />{" "}
