@@ -1,15 +1,15 @@
 import "../../components/List/ServiceList.css";
+import { CiSearch } from "react-icons/ci";
 
 const ServiceList = () => {
   return (
     <div className="ServiceList">
       <div className="search">
         <div className="searchBar">
-          <img src="../../assets/img/search.png" alt="" />
+          <CiSearch />
           <input type="text" placeholder="Search" />
         </div>
       </div>
-      <img src="../../assets/img/plus.png" alt="" />
     </div>
   );
 };
