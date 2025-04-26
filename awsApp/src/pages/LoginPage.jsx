@@ -1,9 +1,11 @@
+import { auth } from "../firebase.js";
+import { signInWithEmailAndPassword } from "firebase/auth";
 // LoginPage.jsx
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom"; // 導入 useNavigate
 import "../components/LoginPage.css"; // 導入 CSS 檔案
 import { Link } from "react-router-dom"; // 導入 Link
-import RegisterPage from "./pages/RegisterPage";
+// import RegisterPage from "RegisterPage";
 
 function LoginPage() {
   const [username, setUsername] = useState("");
@@ -24,16 +26,20 @@ function LoginPage() {
     setRememberMe(event.target.checked);
   };
 
-  const handleLogin = () => {
+  const handleLogin = async () => {  // ⭐
     if (isLoginEnabled) {
-      // 在這裡進行你的登入驗證邏輯
-      console.log("Logging in with:", { username, password, rememberMe });
-
-      // 假設登入成功
-      // 在實際應用中，你可能需要根據 API 響應來判斷登入是否成功
-      navigate("/chat"); // 登入成功後導航到 /chat
+      try {
+        console.log("Logging in with:", { username, password, rememberMe });
+        const userCredential = await signInWithEmailAndPassword(auth, username, password); // ⭐記得 await
+        console.log("登入成功", userCredential.user);
+        navigate("/chat"); // ⭐成功才導頁
+      } catch (error) {
+        console.error("登入失敗", error.message);
+        alert("登入失敗：" + error.message); // ⭐失敗顯示錯誤
+      }
     }
   };
+  
 
   useEffect(() => {
     setIsLoginEnabled(username.trim() !== "" && password.trim() !== "");
@@ -77,7 +83,7 @@ function LoginPage() {
         </button>
       </div>
       <div className="no-account">
-        New? <Link to="/RegisterPage">Register here</Link>
+        New? <Link to="/registerPage">Register here</Link>
       </div>
     </div>
   );

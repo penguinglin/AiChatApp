@@ -1,3 +1,6 @@
+import { auth } from "../firebase.js"; // ⭐ 引入firebase連線
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth"; // ⭐ 引入註冊跟更新Profile的功能
+
 import React, { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import "../components/RegisterPage.css"; // 導入 CSS 檔案
@@ -41,23 +44,39 @@ function RegisterPage() {
     setAgreeTerms(event.target.checked);
   };
 
-  const handleRegister = () => {
+  const handleRegister = async () => {  //⭐加 async
     if (isRegisterEnabled) {
-      // 在這裡進行你的註冊邏輯
-      console.log("Registering with:", {
-        username,
-        password,
-        displayName,
-        birthDate,
-        language,
-        agreeTerms,
-      });
-
-      // 假設註冊成功
-      // 在實際應用中，你可能需要根據 API 響應來判斷註冊是否成功
-      navigate("/login"); // 註冊成功後導航到 /login 頁面
+      try {
+        console.log("Registering with:", {
+          username,
+          password,
+          displayName,
+          birthDate,
+          language,
+          agreeTerms,
+        });
+  
+        //⭐ 第一步：用帳號密碼在Firebase註冊
+        const userCredential = await createUserWithEmailAndPassword(auth, username, password);
+        const user = userCredential.user;
+  
+        //⭐ 第二步：更新使用者顯示名稱（可選）
+        await updateProfile(user, {
+          displayName: displayName,
+        });
+  
+        console.log("註冊成功", user);
+  
+        //⭐ 第三步：跳轉到登入頁
+        navigate("/login");
+        
+      } catch (error) {
+        console.error("註冊失敗", error.message);
+        alert("註冊失敗：" + error.message); //⭐也可以做成紅字顯示
+      }
     }
   };
+  
 
   useEffect(() => {
     const isUsernameValid = username.trim() !== "";
@@ -149,9 +168,15 @@ function RegisterPage() {
         </label>
       </div>
       <div className="form-actions">
-        <button onClick={handleRegister} disabled={!isRegisterEnabled}>
-          Register
-        </button>
+      <button
+        onClick={() => {
+          handleRegister();   // ⭐呼叫註冊，不是handleSaveProfile
+          alert("Settings saved!");
+        }}        
+      >
+        Save
+      </button>
+
       </div>
       <div className="has-account">
         Already have an account? <Link to="/login">Login here</Link>
