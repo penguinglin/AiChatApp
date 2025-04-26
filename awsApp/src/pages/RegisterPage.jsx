@@ -55,7 +55,7 @@ function RegisterPage() {
 
       // 假設註冊成功
       // 在實際應用中，你可能需要根據 API 響應來判斷註冊是否成功
-      navigate("/login"); // 註冊成功後導航到 /login 頁面
+      navigate("/chatapp"); // 註冊成功後導航到 /login 頁面
     }
   };
 

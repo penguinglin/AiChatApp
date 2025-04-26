@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom"; // 導入 useNavigate
 import "../components/LoginPage.css"; // 導入 CSS 檔案
 import { Link } from "react-router-dom"; // 導入 Link
-import RegisterPage from "./pages/RegisterPage";
+// import RegisterPage from "./pages/RegisterPage";
 
 function LoginPage() {
   const [username, setUsername] = useState("");
@@ -31,7 +31,7 @@ function LoginPage() {
 
       // 假設登入成功
       // 在實際應用中，你可能需要根據 API 響應來判斷登入是否成功
-      navigate("/chat"); // 登入成功後導航到 /chat
+      navigate("/chatapp"); // 登入成功後導航到 /chat
     }
   };
 
@@ -77,7 +77,7 @@ function LoginPage() {
         </button>
       </div>
       <div className="no-account">
-        New? <Link to="/RegisterPage">Register here</Link>
+        New? <Link to="/registerpage">Register here</Link>
       </div>
     </div>
   );
