@@ -5,9 +5,10 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
-import ChatApp from "./pages/ChatApp";
+// import ChatApp from "./pages/ChatApp";
 import ProfilePage from "./pages/ProfilePage"; // 假設你有一個 ProfilePage
 import SettingsPage from "./pages/SettingPage"; // 假設你有一個 SettingsPage
+import ChatAppLayout from "./pages/ChatAppLayout";
 
 function App() {
   const [isVisibleStart, setIsVisibleStart] = useState(true);
@@ -71,7 +72,7 @@ function App() {
                 {/* 將 LoginPage 放在 /login 路徑 */}
                 <Route path="/registerpage" element={<RegisterPage />} />{" "}
                 {/* 添加 RegisterPage 的路由 */}
-                <Route path="/chatapp" element={<ChatApp />} />{" "}
+                <Route path="/chatapp" element={<ChatAppLayout />} />{" "}
                 {/* 添加 ChatAppPage 的路由 */}
                 <Route path="/profile" element={<ProfilePage />} />{" "}
                 {/* 添加 ProfilePage 的路由 */}

@@ -1,0 +1,30 @@
+.chat-app-layout {
+  display: flex;
+  grid-template-columns: 20% 50% 30%; /* 調整百分比來控制寬度比例 */
+  height: 90vh; /* 讓容器佔滿整個 viewport 高度 (可根據需求調整) */
+}
+
+.container {
+  width: 90vm;
+  height: 90vh; /* 讓容器佔滿整個 viewport 高度 (可根據需求調整) */
+  background-color: rgba(17, 25, 40, 0.75);
+  backdrop-filter: blur(19px) saturate(180%);
+  border-radius: 19px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  display: flex;
+}
+
+.list-page-container {
+  /* 可以針對 ListPage 容器設定樣式 */
+  display: flex;
+}
+
+.chat-app-container {
+  /* 可以針對 ChatApp 容器設定樣式 */
+  display: flex;
+}
+
+.detail-page-container {
+  /* 可以針對 DetailPage 容器設定樣式 */
+  display: flex;
+}
