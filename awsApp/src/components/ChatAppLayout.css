@@ -1,7 +1,7 @@
 .chat-app-layout {
   display: flex;
-  grid-template-columns: 20% 50% 30%; /* 調整百分比來控制寬度比例 */
   height: 90vh; /* 讓容器佔滿整個 viewport 高度 (可根據需求調整) */
+  width: 90vw; /* 讓容器佔滿整個 viewport 寬度 (可根據需求調整) */
 }
 
 .container {
@@ -16,15 +16,15 @@
 
 .list-page-container {
   /* 可以針對 ListPage 容器設定樣式 */
-  display: flex;
+  flex: 1;
 }
 
 .chat-app-container {
   /* 可以針對 ChatApp 容器設定樣式 */
-  display: flex;
+  flex: 2; /* 這裡的數字可以根據需求調整，1:2 的比例 */
 }
 
 .detail-page-container {
   /* 可以針對 DetailPage 容器設定樣式 */
-  display: flex;
+  flex: 1;
 }

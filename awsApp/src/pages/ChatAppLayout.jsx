@@ -1,5 +1,5 @@
 import React from "react";
-import ListPage from "./ListPage"; // 確保路徑正確
+import ListPage from "./List/ListPage"; // 確保路徑正確
 import ChatApp from "./ChatApp"; // 確保路徑正確
 import DetialPage from "./DetialPage"; // 確保路徑正確
 import "../components/ChatAppLayout.css"; // 稍後創建這個 CSS 檔案
