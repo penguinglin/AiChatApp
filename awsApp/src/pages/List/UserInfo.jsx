@@ -3,8 +3,15 @@ import "../../components/List/UserInfo.css";
 const UserInfo = () => {
   return (
     <div className="UserInfo">
-      <h1>User Info</h1>
-      <p>This is the user info page.</p>
+      <div className="user">
+        <img src="../../assets/img/avatar.png" alt="" />
+        <h2>John Doe</h2>
+      </div>
+      <div className="icons">
+        <img src="../../assets/img/more.png" alt="" />
+        <img src="../../assets/img/video.png" alt="" />
+        <img src="../../assets/img/edit.png" alt="" />
+      </div>
     </div>
   );
 };

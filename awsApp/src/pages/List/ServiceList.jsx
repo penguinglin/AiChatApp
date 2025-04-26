@@ -3,8 +3,13 @@ import "../../components/List/ServiceList.css";
 const ServiceList = () => {
   return (
     <div className="ServiceList">
-      <h1>Service List</h1>
-      <p>This is the service list page.</p>
+      <div className="search">
+        <div className="searchBar">
+          <img src="../../assets/img/search.png" alt="" />
+          <input type="text" placeholder="Search" />
+        </div>
+      </div>
+      <img src="../../assets/img/plus.png" alt="" />
     </div>
   );
 };
