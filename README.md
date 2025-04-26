@@ -97,3 +97,24 @@ awsApp/
 |                              |   - 確保專案可以順利運行並上傳代碼到 GitHub                                     |
 
 ---
+
+## Build the project
+
+1. check Node.js, npm
+
+```
+node -v
+npm -v
+```
+
+if no:
+install from the [website](https://nodejs.org/)
+
+2. into root directory
+
+```
+cd AWS/awsApp
+npm install
+npm run dev
+```
+
