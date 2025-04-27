@@ -7,8 +7,6 @@ import { updateProfile } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
 import { db } from "../firebase";
 
-
-
 function ProfilePage() {
   const navigate = useNavigate();
   const [displayName, setDisplayName] = useState("Username"); // Default display name
@@ -51,19 +49,23 @@ function ProfilePage() {
       console.log("No user logged in");
       return;
     }
-  
+
     try {
       // 更新displayName跟photoURL
       await updateProfile(currentUser, {
         displayName: displayName,
         photoURL: selectedAvatar || DefaultAvatar,
       });
-  
+
       // 更新bio到firestore
-      await setDoc(doc(db, "users", currentUser.uid), {
-        bio: bio,
-      }, { merge: true });
-  
+      await setDoc(
+        doc(db, "users", currentUser.uid),
+        {
+          bio: bio,
+        },
+        { merge: true }
+      );
+
       alert("Profile updated successfully!");
       navigate("/chatapp");
     } catch (error) {
@@ -71,7 +73,6 @@ function ProfilePage() {
       alert("Failed to update profile.");
     }
   };
-  
 
   return (
     <div className="profile-page-container">
@@ -139,7 +140,6 @@ function ProfilePage() {
         <button
           onClick={() => {
             handleSaveProfile();
-            alert("Settings saved!");
           }}
         >
           Save

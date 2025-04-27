@@ -32,7 +32,20 @@ const UserInfo = () => {
   }, []);
 
   if (!user) {
-    return <div>Loading...</div>; // 等資料載入
+    return (
+      <div>
+        <div>Loading...</div>
+        <div className="icons">
+          <Link to="/profile">
+            <PiDotsThree color="white" size={18} />
+          </Link>
+          <FaVideo color="white" size={18} />
+          <Link to="/settings">
+            <CiSettings color="white" size={18} />
+          </Link>
+        </div>
+      </div>
+    ); // 等資料載入
   }
 
   return (
