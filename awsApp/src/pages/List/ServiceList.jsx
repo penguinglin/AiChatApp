@@ -1,6 +1,10 @@
 import "../../components/List/ServiceList.css";
 import { CiSearch } from "react-icons/ci";
 import avatar from "../../assets/react.svg";
+import { TiSocialFacebook } from "react-icons/ti";
+import { MdAutoFixNormal } from "react-icons/md";
+import { MdLiveTv } from "react-icons/md";
+import { FaRocketchat } from "react-icons/fa";
 
 const ServiceList = () => {
   return (
@@ -14,26 +18,30 @@ const ServiceList = () => {
         </div>
         <div className="searchitem">
           <div className="item">
-            <img src={avatar} alt="avatar" />
+            <FaRocketchat color="white" size={40} />
             <div className="texts">
-              <span>Jane Doe</span>
-              <p>Hello everyone!</p>
+              <span>Eden</span>
             </div>
           </div>
 
           <div className="item">
-            <img src={avatar} alt="avatar" />
+            <MdLiveTv color="white" size={40} />
             <div className="texts">
-              <span>Jane Doe</span>
-              <p>Hello everyone!</p>
+              <span>RealX Hub</span>
             </div>
           </div>
 
           <div className="item">
-            <img src={avatar} alt="avatar" />
+            <TiSocialFacebook color="white" size={40} />
             <div className="texts">
-              <span>Jane Doe</span>
-              <p>Hello everyone!</p>
+              <span>Eden's Blog</span>
+            </div>
+          </div>
+
+          <div className="item">
+            <MdAutoFixNormal color="white" size={40} />
+            <div className="texts">
+              <span>Playfix</span>
             </div>
           </div>
         </div>

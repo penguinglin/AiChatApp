@@ -9,7 +9,7 @@ import { db } from "../firebase";
 
 function ProfilePage() {
   const navigate = useNavigate();
-  const [displayName, setDisplayName] = useState("Username"); // Default display name
+  const [displayName, setDisplayName] = useState("Ivy"); // Default display name
   const [newPassword, setNewPassword] = useState("");
   const [confirmNewPassword, setConfirmNewPassword] = useState("");
   const [bio, setBio] = useState(""); // Personal bio

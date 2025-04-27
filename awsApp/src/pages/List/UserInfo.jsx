@@ -1,5 +1,5 @@
 import "../../components/List/UserInfo.css";
-import userImg from "../../assets/react.svg";
+import userImg from "../../assets/1111.jpg";
 import { CiSettings } from "react-icons/ci";
 import { FaVideo } from "react-icons/fa";
 import { CiImageOn } from "react-icons/ci";
@@ -33,8 +33,11 @@ const UserInfo = () => {
 
   if (!user) {
     return (
-      <div>
-        <div>Loading...</div>
+      <div className="UserInfo">
+        <div className="user">
+          <img src={userImg} alt="hello" sizes="20" />
+          <h3>Ivy</h3>
+        </div>
         <div className="icons">
           <Link to="/profile">
             <PiDotsThree color="white" size={18} />
