@@ -2,6 +2,12 @@ import React, { useState } from "react";
 import "../components/ProfilePage.css"; // Import CSS file
 import DefaultAvatar from "../assets/react.svg"; // Assuming you have a default avatar
 import { useNavigate, Link } from "react-router-dom";
+import { auth } from "../firebase"; // 引入你設定好的firebase檔
+import { updateProfile } from "firebase/auth";
+import { doc, setDoc } from "firebase/firestore";
+import { db } from "../firebase";
+
+
 
 function ProfilePage() {
   const navigate = useNavigate();
@@ -39,25 +45,33 @@ function ProfilePage() {
     }
   };
 
-  const handleSaveProfile = () => {
-    // Handle logic to save profile data here
-    console.log("Saving profile:", {
-      displayName,
-      newPassword,
-      bio,
-      selectedAvatar,
-    });
-    // In a real application, you would send this data to a backend API
-    if (newPassword && newPassword === confirmNewPassword) {
-      console.log("Password updated successfully (mock)");
-      setNewPassword("");
-      setConfirmNewPassword("");
-    } else if (newPassword) {
-      console.log("Password confirmation does not match");
+  const handleSaveProfile = async () => {
+    const currentUser = auth.currentUser;
+    if (!currentUser) {
+      console.log("No user logged in");
+      return;
     }
-    setIsEditingAvatar(false); // Stop editing avatar after saving
-    navigate("/chatapp");
+  
+    try {
+      // 更新displayName跟photoURL
+      await updateProfile(currentUser, {
+        displayName: displayName,
+        photoURL: selectedAvatar || DefaultAvatar,
+      });
+  
+      // 更新bio到firestore
+      await setDoc(doc(db, "users", currentUser.uid), {
+        bio: bio,
+      }, { merge: true });
+  
+      alert("Profile updated successfully!");
+      navigate("/chatapp");
+    } catch (error) {
+      console.error("Error updating profile:", error);
+      alert("Failed to update profile.");
+    }
   };
+  
 
   return (
     <div className="profile-page-container">

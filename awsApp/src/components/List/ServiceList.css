@@ -1,4 +1,6 @@
 .ServiceList {
+  flex:1;
+  overflow: scroll;
   /* 文字白色 */
   color: #fff;
   .search {
@@ -31,8 +33,37 @@
       }
     }
   }
+  
   .item{
+    color: #fff;
     display: flex;
     align-items: center;
+    gap: 20px;
+    padding: 20px;
+    cursor: pointer;
+    border-bottom: 1px solid #dddddd35;
+    width: 100%;
+    box-sizing: border-box;
   }
+  .item img {
+    width: 50px; /* 或你想要的大小 */
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%; 
+  }
+  .item texts{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    span{
+      font-weight: 500;
+    }
+    p{
+      font-size: 14px;
+      font-weight: 300;
+    }
+  }
+
+  
 }
