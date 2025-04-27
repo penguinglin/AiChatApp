@@ -1,5 +1,5 @@
 import "../../components/List/UserInfo.css";
-import userImg from "../../assets/img/avatar.png"; 
+import userImg from "../../assets/img/avatar.png";
 import { CiSettings } from "react-icons/ci";
 import { FaVideo } from "react-icons/fa";
 import { CiImageOn } from "react-icons/ci";
@@ -11,10 +11,9 @@ import { db } from "../../firebase";
 import { doc, getDoc } from "firebase/firestore";
 import { onAuthStateChanged } from "firebase/auth";
 
-
 const UserInfo = () => {
   const [user, setUser] = useState(null); // 抓auth用
-  const [bio, setBio] = useState("");     // 抓bio用
+  const [bio, setBio] = useState(""); // 抓bio用
   useEffect(() => {
     const fetchUserData = async () => {
       const currentUser = auth.currentUser;
@@ -35,7 +34,6 @@ const UserInfo = () => {
   if (!user) {
     return <div>Loading...</div>; // 等資料載入
   }
-
 
   return (
     <div className="UserInfo">
