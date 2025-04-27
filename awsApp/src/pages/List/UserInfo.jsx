@@ -1,5 +1,5 @@
 import "../../components/List/UserInfo.css";
-import userImg from "../../assets/img/avatar.png";
+import userImg from "../../assets/react.svg";
 import { CiSettings } from "react-icons/ci";
 import { FaVideo } from "react-icons/fa";
 import { CiImageOn } from "react-icons/ci";

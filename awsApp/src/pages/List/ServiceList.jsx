@@ -1,6 +1,6 @@
 import "../../components/List/ServiceList.css";
 import { CiSearch } from "react-icons/ci";
-import avatar from "../../assets/img/avatar.png";
+import avatar from "../../assets/react.svg";
 
 const ServiceList = () => {
   return (
