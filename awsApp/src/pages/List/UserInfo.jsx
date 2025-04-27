@@ -38,16 +38,17 @@ const UserInfo = () => {
   return (
     <div className="UserInfo">
       <div className="user">
-        <img src={userImg} alt="hello" />
-        <h2>{user.displayName || "Anonymous"}</h2>
+        <img src={userImg} alt="hello" sizes="20" />
+        {/* adjust the font */}
+        <h3>{user.displayName || "Anonymous"}</h3>
       </div>
       <div className="icons">
         <Link to="/profile">
-          <PiDotsThree color="white" size={24} />
+          <PiDotsThree color="white" size={18} />
         </Link>
-        <FaVideo color="white" size={24} />
+        <FaVideo color="white" size={18} />
         <Link to="/settings">
-          <CiSettings color="white" size={24} />
+          <CiSettings color="white" size={18} />
         </Link>
       </div>
     </div>

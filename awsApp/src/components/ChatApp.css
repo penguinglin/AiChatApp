@@ -17,11 +17,11 @@
     .user {
       display: flex;
       align-items: center;
-      gap: 20px;
+      gap: 18px;
 
       img {
-        width: 60px;
-        height: 60px;
+        width: 50px;
+        height: 50px;
         border-radius: 50%;
         object-fit: cover;
       }
@@ -38,7 +38,7 @@
         }
 
         p {
-          font-size: 14px;
+          font-size: 12px;
           font-weight: 300;
           color: #a5a5a5;
         }
@@ -48,6 +48,8 @@
     .icons {
       display: flex;
       gap: 20px;
+      /* white */
+      color: white;
 
       img {
         width: 20px;
@@ -109,9 +111,6 @@
       max-width: 70%;
       display: flex;
       gap: 20px;
-
-      &.own {
-      }
     }
   }
 
@@ -155,4 +154,27 @@
       margin-left: auto;
     }
   }
+}
+
+.dialog-box {
+  background-color: #333; /* 深色背景 */
+  color: aliceblue; /* 白色文字 (繼承自 .texts，可以移除 .texts 的 color) */
+  border-radius: 10px; /* 圓角 */
+  padding: 15px; /* 內邊距，讓文字與邊框之間有間距 */
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: fit-content; /* 框框寬度適應內容 */
+  /* 其他你可能需要的樣式 */
+}
+
+.dialog-box span {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.dialog-box p {
+  font-size: 12px;
+  font-weight: 300;
+  color: #a5a5a5; /* 淺灰色文字 */
 }
