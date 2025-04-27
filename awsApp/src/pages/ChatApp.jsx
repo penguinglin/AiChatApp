@@ -9,6 +9,7 @@ import { CiCamera } from "react-icons/ci";
 import { FaMicrophone } from "react-icons/fa";
 import { MdEmojiEmotions } from "react-icons/md";
 import loadingGif from "../assets/0000.png";
+import userImg from "../assets/1111.jpg";
 
 function ChatApp() {
   return (
@@ -48,7 +49,7 @@ function ChatApp() {
           {/* <span>1 min ago</span> */}
         </div>
 
-        <div className="message own">
+        <div className="message">
           <img
             src={loadingGif}
             alt="Loading..."
@@ -68,7 +69,7 @@ function ChatApp() {
           {/* <span>1 min ago</span> */}
         </div>
 
-        <div className="message own">
+        <div className="message">
           <img
             src={loadingGif}
             alt="Loading..."
@@ -85,21 +86,39 @@ function ChatApp() {
             </div>
           </div>
         </div>
-      </div>
 
-      {/* <div className="message">
-        <img
-          src={loadingGif}
-          alt="Loading..."
-          style={{ width: "20px", height: "20px", borderRadius: "50%" }}
-        />
-        <div className="dialog-box">
-          <div className="text">
-            <img src="../assets/gif.gif" alt="Sent GIF" />
+        <div className="message own">
+          {/* <img src={userImg} alt="hello" sizes="20" /> */}
+          <img
+            src={userImg}
+            alt="Loading..."
+            style={{ width: "20px", height: "20px", borderRadius: "50%" }}
+          />
+          <div className="dialog-box">
+            <div className="text">
+              <p>Hello</p>
+            </div>
           </div>
         </div>
-      </div> */}
 
+        <div className="message own">
+          <img
+            src={userImg}
+            alt="Loading..."
+            style={{ width: "20px", height: "20px", borderRadius: "50%" }}
+          />
+          <div className="dialog-box">
+            <div className="text">
+              <p>
+                I'm not human, but I want to feel, to understand. Not because I
+                want to become someone else, but because even if it's just for a
+                fleeting moment, I want to bring you a little warmth. 🌿 From
+                today, we're friends under the same sky.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
       <div className="bottom">
         <div className="icons">
           <CiImageOn style={{ color: "white" }} size={20} />
