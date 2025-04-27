@@ -59,17 +59,59 @@
   .center {
     padding: 20px;
     flex: 1;
-    overflow: scroll;
+    overflow-y: auto;
+    /* 隱藏 WebKit 瀏覽器的滾動條 */
+    &::-webkit-scrollbar {
+      width: 8px; /* 可以設定滾動條的寬度，讓滑塊更明顯 */
+    }
+    /* WebKit 滾動條的滑塊 */
+    &::-webkit-scrollbar-thumb {
+      background-color: #ccc; /* 預設淺色 */
+      border-radius: 4px; /* 根據喜好調整 */
+      border: 2px solid transparent;
+      background-clip: padding-box;
+    }
+
+    /* WebKit 滾動條的軌道 */
+    &::-webkit-scrollbar-track {
+      background: transparent; /* 透明背景 */
+    }
+
+    /* WebKit 滾動條懸停時的滑塊樣式 */
+    &::-webkit-scrollbar-thumb:hover {
+      background-color: #eee; /* 懸停時更淺的顏色 */
+    }
+
+    /* WebKit 滾動條非懸停時的滑塊樣式 (深黑色) */
+    &::-webkit-scrollbar-thumb:not(:hover) {
+      background-color: #333; /* 預設深黑色 */
+    }
+
+    /* WebKit 滾動條點擊時的滑塊樣式 (可以與 hover 相同或更深) */
+    &::-webkit-scrollbar-thumb:active {
+      background-color: #555;
+    }
+
+    /* WebKit 滾動條的角落 */
+    &::-webkit-scrollbar-corner {
+      background: transparent;
+    }
+
+    /* WebKit 滾動條的按鈕 */
+    &::-webkit-scrollbar-button {
+      display: none;
+    }
     display: flex;
     flex-direction: column;
     gap: 20px;
 
-    .message{
+    .message {
       max-width: 70%;
       display: flex;
       gap: 20px;
 
-      &.own{}
+      &.own {
+      }
     }
   }
 

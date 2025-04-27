@@ -6,14 +6,14 @@ import ServiceList from "./ServiceList";
 function List() {
   return (
     <div className="List">
-  <div className="UserInfo">
-    <UserInfo />
-  </div>
+      <div className="UserInfo">
+        <UserInfo />
+      </div>
 
-  <div className="ServiceList">
-    <ServiceList />
-  </div>
-</div>
+      <div className="Service">
+        <ServiceList />
+      </div>
+    </div>
   );
 }
 

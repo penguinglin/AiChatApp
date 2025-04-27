@@ -4,6 +4,6 @@
   display: flex;
   flex-direction: column;
 
-  overflow-y: auto; /* 垂直方向出現滾動條 */
+  /* overflow-y: auto; 垂直方向出現滾動條 */
   height: 100vh; /* 或者你可以根據你的版面調整高度 */
 }
